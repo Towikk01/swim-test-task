@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import '../domain/users_repository.dart';
 import 'models/user.dart';
 
-/// Dio-backed implementation of [UsersRepository].
 class UsersRepositoryImpl implements UsersRepository {
   UsersRepositoryImpl(this._dio);
 
@@ -13,8 +12,6 @@ class UsersRepositoryImpl implements UsersRepository {
   Future<List<User>> fetchUsers() async {
     final response = await _dio.get<List<dynamic>>('/users');
     final data = response.data ?? const [];
-    return data
-        .map((e) => User.fromJson(e as Map<String, dynamic>))
-        .toList();
+    return data.map((e) => User.fromJson(e as Map<String, dynamic>)).toList();
   }
 }

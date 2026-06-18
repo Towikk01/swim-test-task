@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 
 import '../domain/pace_repository.dart';
 
-/// Dio-backed implementation of [PaceRepository].
 class PaceRepositoryImpl implements PaceRepository {
   PaceRepositoryImpl(this._dio);
 

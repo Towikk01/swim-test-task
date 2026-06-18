@@ -83,10 +83,10 @@ class _UsersList extends StatelessWidget {
                 Center(child: Text('No users found')),
               ],
             )
-          : ListView.separated(
+          : ListView.builder(
               physics: const AlwaysScrollableScrollPhysics(),
+              padding: const EdgeInsets.symmetric(vertical: 8),
               itemCount: users.length,
-              separatorBuilder: (_, _) => const Divider(height: 1),
               itemBuilder: (_, i) => UserTile(user: users[i]),
             ),
     );

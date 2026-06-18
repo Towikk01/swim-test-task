@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stream_transform/stream_transform.dart';
-import 'package:test_task_swim/features/pace/data/pace_repository.dart';
+import 'package:test_task_swim/features/pace/domain/pace_repository.dart';
 import 'package:test_task_swim/features/pace/domain/pace_range.dart';
 import 'package:test_task_swim/features/pace/domain/swimmer_level.dart';
 

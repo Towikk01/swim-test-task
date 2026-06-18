@@ -1,16 +1,22 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../features/pace/data/pace_repository.dart';
+import '../../features/pace/data/pace_repository_impl.dart';
+import '../../features/pace/domain/pace_repository.dart';
+import '../../features/users/data/users_repository_impl.dart';
+import '../../features/users/domain/users_repository.dart';
 import '../network/dio_client.dart';
 
 final getIt = GetIt.instance;
 
-/// Registers stateless, app-wide services (networking, repositories).
-/// Blocs are intentionally NOT registered here — they live in the widget
-/// tree via BlocProvider so their lifecycle (close()) is handled correctly.
 void setupServiceLocator() {
+  // Bind each abstract repository to its concrete Dio implementation.
   getIt
     ..registerLazySingleton<Dio>(createDio)
-    ..registerLazySingleton<PaceRepository>(() => PaceRepository(getIt<Dio>()));
+    ..registerLazySingleton<PaceRepository>(
+      () => PaceRepositoryImpl(getIt<Dio>()),
+    )
+    ..registerLazySingleton<UsersRepository>(
+      () => UsersRepositoryImpl(getIt<Dio>()),
+    );
 }

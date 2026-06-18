@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_task_swim/core/di/service_locator.dart';
 import 'package:test_task_swim/core/theme/app_theme.dart';
-import 'package:test_task_swim/features/pace/data/pace_repository.dart';
+import 'package:test_task_swim/features/pace/domain/pace_repository.dart';
 import 'package:test_task_swim/features/pace/presentation/bloc/pace_bloc.dart';
 import 'package:test_task_swim/features/pace/presentation/widgets/caption.dart';
 import 'package:test_task_swim/features/pace/presentation/widgets/level_badge.dart';

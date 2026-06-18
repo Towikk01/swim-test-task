@@ -14,6 +14,10 @@ class PaceTotalChanged extends PaceEvent {
   List<Object?> get props => [totalSeconds];
 }
 
+class PaceSubmitted extends PaceEvent {
+  const PaceSubmitted();
+}
+
 class PaceMinutesEntered extends PaceEvent {
   const PaceMinutesEntered(this.minutes);
   final int minutes;
